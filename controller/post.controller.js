@@ -18,6 +18,12 @@ class PostController {
 
         res.json(posts.rows)
     }
+    async createTable(req, res) {
+
+        const posts = await db.query(`create TABLE post(id serial PRIMARY KEY, title VARCHAR(255), content VARCHAR(255), user_id INTEGER, FOREIGN KEY (user_id) REFERENCES person (id))`)
+
+        res.json(posts.rows)
+    }
 }
 
 module.exports = new PostController()
