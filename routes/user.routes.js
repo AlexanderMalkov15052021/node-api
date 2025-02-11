@@ -9,6 +9,6 @@ router.get('/user', userController.getUser)
 router.get('/user/:id', userController.getOneUser)
 router.put('/user', userController.updateUser)
 router.delete('/user/:id', userController.deleteUser)
-router.get('/user/create-table', userController.createTable)
+router.get('/user-create-table', userController.createTable)
 
 module.exports = router

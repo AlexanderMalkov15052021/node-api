@@ -38,9 +38,9 @@ class UserController {
         res.json(user.rows[0])
     }
     async createTable(req, res) {
-        const user = await db.query(`create TABLE person(id serial PRIMARY KEY,name VARCHAR(255),surname VARCHAR(255))`)
+        await db.query(`create TABLE person(id serial PRIMARY KEY, name VARCHAR(255), surname VARCHAR(255))`)
 
-        res.json(user.rows[0])
+        res.json({ "Create table:": true })
     }
 }
 

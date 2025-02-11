@@ -19,10 +19,9 @@ class PostController {
         res.json(posts.rows)
     }
     async createTable(req, res) {
+        await db.query(`create TABLE post(id serial PRIMARY KEY, title VARCHAR(255), content VARCHAR(255), user_id INTEGER, FOREIGN KEY (user_id) REFERENCES person (id))`)
 
-        const posts = await db.query(`create TABLE post(id serial PRIMARY KEY, title VARCHAR(255), content VARCHAR(255), user_id INTEGER, FOREIGN KEY (user_id) REFERENCES person (id))`)
-
-        res.json(posts.rows)
+        res.json({ "Create table:": true })
     }
 }
 
