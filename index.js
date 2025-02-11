@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 8080
 
 const app = express()
 
-// app.get('/', (req, res) => {
-//     res.send('HELLOW POSTGRES + NODEJS!!!')
-// })
+app.get('/', (req, res) => {
+    res.send('HELLOW POSTGRES + NODEJS!!!')
+})
 
 app.use(express.json())
 app.use('/api', userRouter)
